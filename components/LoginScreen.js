@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 export default class LoginScreen extends Component {
-state = {
-    email: '',
-    password: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+    };
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -32,12 +41,21 @@ state = {
           <Text style={styles.forgotPswd}>Forgot Password?</Text>
         </TouchableOpacity>
         {/* Login button */}
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity style={styles.loginBtn} onPress={()=>{
+            this.props.navigation.navigate('Home')
+        }}>
           <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
         {/* Signup button */}
         <TouchableOpacity>
-          <Text style={styles.loginText}>Signup</Text>
+          <Text
+            style={styles.loginText}
+            onPress={() => {
+              this.props.navigation.navigate('Signup');
+            }}
+          >
+            Signup
+          </Text>
         </TouchableOpacity>
       </View>
     );

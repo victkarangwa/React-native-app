@@ -6,7 +6,6 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import LoginScreen from './LoginScreen';
 export default class SignupScreen extends Component {
   constructor(props) {
     super(props);
@@ -69,13 +68,10 @@ export default class SignupScreen extends Component {
           <Text style={styles.loginText}>Signup</Text>
         </TouchableOpacity>
         {/* Login button */}
-        <TouchableOpacity>
-          <Text
-            style={styles.loginText}
-            onPress={() => this.props.navigation.navigate('Login')}
-          >
-            Login
-          </Text>
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Login')}
+        >
+          <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
       </View>
     );
