@@ -1,103 +1,22 @@
-import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  
-} from 'react-native';
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import LoginScreen from './components/LoginScreen';
+import SignupScreen from './components/SignupScreen';
 
-export default class App extends React.Component {
-  state = {
-    email: '',
-    password: '',
-  };
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.appLogo}>√ictor</Text>
-        <View style={styles.inputView}>
-          <TextInput
-            style={styles.inputText}
-            placeholder='Email'
-            placeholderTextColor='#003f5c'
-            onChangeText={(text) => this.setState({ email: text })}
-          />
-        </View>
-        <View style={styles.inputView}>
-          <TextInput
-            style={styles.inputText}
-            placeholder='Password'
-            placeholderTextColor='#003f5c'
-            secureTextEntry={true}
-            onChangeText={(text) => this.setState({ password: text })}
-          />
-        </View>
 
-        {/* Forgot password button */}
-        {/* TouchableOpacity: It’s a simple Text inside a button to have the press functionality, you cannot add bare text */}
-        <TouchableOpacity>
-          <Text style={styles.forgotPswd}>Forgot Password?</Text>
-        </TouchableOpacity>
+const Stack = createStackNavigator();
 
-        {/* Login button */}
-        <TouchableOpacity style={styles.loginBtn}>
-          <Text style={styles.loginText}>Login</Text>
-        </TouchableOpacity>
-
-        {/* Signup button */}
-        <TouchableOpacity>
-          <Text style={styles.loginText}>Signup</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Signup">
+        <Stack.Screen name='Login' component={LoginScreen} />
+        <Stack.Screen name='Signup' component={SignupScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
-// Predifined styles for the elements
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#395375',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  appLogo: {
-    fontWeight: 'bold',
-    fontSize: 50,
-    color: '#59a4ff',
-    marginBottom: 40,
-  },
-  inputView: {
-    width: '80%',
-    backgroundColor: '#95a5c9',
-    borderRadius: 5,
-    height: 50,
-    marginBottom: 20,
-    justifyContent: 'center',
-    padding: 20,
-  },
-  inputText: {
-    height: 50,
-    color: 'black',
-  },
-  forgotPswd: {
-    color: 'white',
-    fontSize: 11,
-    textDecorationLine: 'underline'
-  },
-  loginBtn: {
-    width: '80%',
-    backgroundColor: '#59a4ff',
-    borderRadius: 25,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 40,
-    marginBottom: 10,
-  },
-  loginText:{
-    color: 'white'
-  }
-});
+export default App;
