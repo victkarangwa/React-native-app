@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   appLogo: {
     fontWeight: 'bold',
     fontSize: 50,
-    color: '#59a4ff',
+    color: '#DD5C28',
     marginBottom: 40,
   },
   inputView: {
@@ -73,11 +73,11 @@ const styles = StyleSheet.create({
   forgotPswd: {
     color: 'white',
     fontSize: 11,
-    textDecorationLine: 'underline'
+    textDecorationLine: 'underline',
   },
   loginBtn: {
     width: '80%',
-    backgroundColor: '#59a4ff',
+    backgroundColor: '#DD5C28',
     borderRadius: 25,
     height: 50,
     alignItems: 'center',
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     marginBottom: 10,
   },
-  loginText:{
-    color: 'white'
-  }
+  loginText: {
+    color: 'white',
+  },
 });

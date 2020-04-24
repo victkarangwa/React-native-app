@@ -9,9 +9,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/√ictor1.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/√ictor.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
